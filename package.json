@@ -1,0 +1,48 @@
+{
+  "name": "new_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:tsc": "tsc -w --sourceMap",
+    "start:db": "D:/MongoDB/bin/mongod.exe --config E:/myProject/myblog/server/data/mongo.cfg",
+    "start:pm2": "pm2 start pm2.config.js",
+    "build": "tsc --removeComments",
+    "build:zip": "yarn build && 7z a dist.zip dist",
+    "update": "git pull && unzip -o dist.zip",
+    "deploy": "node ./dist/scripts/deploy",
+    "serve": "node ./dist/server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "module-alias": "^2.2.2",
+    "moment": "^2.25.3",
+    "mongodb": "^3.3.4",
+    "multer": "^1.4.2",
+    "node-schedule": "^1.3.2",
+    "svg-captcha": "^1.4.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.29",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/express-session": "^1.15.16",
+    "@types/lodash": "^4.14.149",
+    "@types/md5": "^2.1.33",
+    "@types/module-alias": "^2.0.0",
+    "@types/mongodb": "^3.3.11",
+    "@types/multer": "^1.3.10",
+    "@types/node": "^12.12.9",
+    "@types/node-schedule": "^1.3.0",
+    "@types/uuid": "^3.4.6"
+  },
+  "_moduleAliases": {
+    "~": "./dist"
+  }
+}

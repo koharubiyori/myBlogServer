@@ -1,0 +1,33 @@
+{
+	"requestHandler": {
+		"scope": "typescript",
+		"prefix": "rh",
+		"body": [
+			"import { RequestHandler } from 'express'",
+			"import dbTools from '~/utils/dbTools'",
+			"",
+			"interface RequestArgs {",
+			"  $1",
+			"}",
+			"",
+			"export default <RequestHandler>function(req, res){",
+			"  ",
+			"  ",
+			"  dbTools.connectDB()",
+			"    .then(async db =>{",
+			"      ",
+			"    })",
+			"    .catch(e =>{",
+			"      console.log(e)",
+			"      res.json(dbTools.responseData.error())",
+			"    })",
+			"}"
+		]
+	},
+
+	"export default from": {
+		"scope": "typescript",
+		"prefix": "expd",
+		"body": "export { default as $1 } from './$1'"
+	}
+}
